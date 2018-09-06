@@ -3,7 +3,7 @@ skip_before_action :require_login, only [ :create],
 raise: false
 
 def create
-    if User.validate_login(parmas[:username], parmas
+    if user = User.validate_login(parmas[:username], parmas
     [:password])
         allow_token_to_be_used_only_once_for(user)
         send_token_for_valid_login_of(user)
