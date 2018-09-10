@@ -20,7 +20,7 @@ class StudentsController < ApiController
                 student: student
             }
         else
-            render json: { message: "could not create monster" }
+            render json: { message: "could not create student" }
         end
     end
 

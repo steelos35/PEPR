@@ -8,26 +8,26 @@
 
 
 User.destroy_all
-Students.destroy_all
-Unit.destroy_all
+Student.destroy_all
+# Unit.destroy_all
 
 
 
 
 
 
-smithJ = teachername.create!(username: 'smithJ', password: 'password')
+@smithJ = User.create!(username: 'smithJ', password: 'password')
 
-jonesA = teachername.create!(username: 'jonesA', password: 'password' )
+@jonesA = User.create!(username: 'jonesA', password: 'password' )
 
-sanchezM = teachername.create!(username: 'sanchezM', password: 'password' )
+@sanchezM = User.create!(username: 'sanchezM', password: 'password' )
 
-sulemanS = teachername.create!(username: 'sulemanS', password: 'password' )
+@sulemanS = User.create!(username: 'sulemanS', password: 'password' )
 
-vasilikiV = teachername.create!(username: 'vasilikiV', password: 'password' )
+@vasilikiV = User.create!(username: 'vasilikiV', password: 'password' )
 
 
-puts "#{teachername.count} users created!"
+puts "#{User.count} users created!"
 
 
 #student name 
@@ -37,52 +37,59 @@ puts "#{teachername.count} users created!"
 
 #smithJ students
 
-
-Students.create!(teachername: smithJ, studentname: 'alex', grade: "k", unit: 'motormovement')
-
-Students.create!(teachername: smithJ, studentname: 'sara', grade: "k", unit: 'motormovement')
-
-Students.create!(teachername: smithJ, studentname: 'mike', grade: "k", unit: 'motormovement')
-
-Students.create!(teachername: smithJ, studentname: 'julie', grade: "k", unit: 'motormovement')
+@alex = @smithJ.students.create(studentname: 'alex', grade: "k", unit: 'motormovement')
 
 
-#jones students
-Students.create!(teachername: jonesA, studentname: 'bobby', grade: "k", unit: 'motormovement')
+# Student.create!(
+#     studentname: 'alex', 
+#     User: 'smithJ', 
+#     grade: "k", 
+#     unit: 'motormovement'
+#     )
 
-Students.create!(teachername: jonesA, studentname: 'tina', grade: "k", unit: 'motormovement')
+# Students.create!(User: smithJ, studentname: 'sara', grade: "k", unit: 'motormovement')
+
+# Students.create!(User: smithJ, studentname: 'mike', grade: "k", unit: 'motormovement')
+
+# Students.create!(User: smithJ, studentname: 'julie', grade: "k", unit: 'motormovement')
+
+
+# #jones students
+# Students.create!(User: jonesA, studentname: 'bobby', grade: "k", unit: 'motormovement')
+
+# Students.create!(User: jonesA, studentname: 'tina', grade: "k", unit: 'motormovement')
  
-Students.create!(teachername: jonesA, studentname: 'cindy', grade: "k", unit: 'motormovement')
+# Students.create!(User: jonesA, studentname: 'cindy', grade: "k", unit: 'motormovement')
 
-Students.create!(teachername: jonesA, studentname: 'tim', grade: "k", unit: 'motormovement')
+# Students.create!(User: jonesA, studentname: 'tim', grade: "k", unit: 'motormovement')
 
-puts "#{Students.count} students created!"
-
-
-#unit:motormovement
-#studentname:
-#run 
-#gallop
-#hop
-#skip
-#jump
+# puts "#{Students.count} students created!"
 
 
-unit.create!(studentname: alex, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
-
-unit.create!(studentname: sara, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
-
-unit.create!(studentname: mike, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
-
-unit.create!(studentname: julie, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
-
-unit.create!(studentname: bobby, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
-
-unit.create!(studentname: cindy, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
-
-unit.create!(studentname: tina, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
-
-unit.create!(studentname: tim, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
+# #unit:motormovement
+# #studentname:
+# #run 
+# #gallop
+# #hop
+# #skip
+# #jump
 
 
-puts "#{unit.count} unit created!"
+# unit.create!(studentname: alex, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
+
+# unit.create!(studentname: sara, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
+
+# unit.create!(studentname: mike, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
+
+# unit.create!(studentname: julie, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
+
+# unit.create!(studentname: bobby, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
+
+# unit.create!(studentname: cindy, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
+
+# unit.create!(studentname: tina, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
+
+# unit.create!(studentname: tim, unit: motormovement, run: true, gallop: false, hop: false, skip: false, jump: true )
+
+
+# puts "#{unit.count} unit created!"
